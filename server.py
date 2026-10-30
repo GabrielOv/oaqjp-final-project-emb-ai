@@ -12,7 +12,7 @@ def run_emotion_detection():
 @app.route('/emotionDetector')
 def get_emotion_detection():
     requested_text = request.args.get('textToAnalyze')
-    formated_response = emotion_detector('I love this')
+    formated_response = emotion_detector('requested_text')
     if formated_response['dominant_emotion'] is None:
         return "Invalid text! Please try again."
     return (
@@ -30,6 +30,3 @@ def render_index_page():
 if __name__ == "__main__":
     run_emotion_detection()
 
-
-if __name__ == "__main__":
-    run_emotion_detection()
